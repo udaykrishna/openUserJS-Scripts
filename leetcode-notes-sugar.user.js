@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         LeetCode Notes Sugar
-// @namespace    https://udaykrishna.com/
+// @namespace    http://udaykrishna.com/
 // @version      0.1
 // @description  LeetCode Auto Show Description
 // @author       Uday
