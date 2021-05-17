@@ -8,7 +8,7 @@
 // @grant        none
 // @icon         https://www.google.com/s2/favicons?domain=livemint.com
 // @license MIT
-// @copyright 2021, nickfever (https://openuserjs.org/users/nickfever)
+// @copyright 2021, uday krishna (https://openuserjs.org/users/nickfever)
 // ==/UserScript==
 
 (function () {
