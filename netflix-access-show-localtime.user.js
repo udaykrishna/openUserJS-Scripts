@@ -8,6 +8,7 @@
 // @icon         https://www.google.com/s2/favicons?domain=netflix.com
 // @grant        none
 // @require      https://momentjs.com/downloads/moment.min.js
+// @copyright 2021, uday krishna (https://openuserjs.org/users/nickfever)
 // @license MIT
 // ==/UserScript==
 /* jshint esversion: 6 */
