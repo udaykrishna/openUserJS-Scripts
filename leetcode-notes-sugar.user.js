@@ -3,12 +3,12 @@
 // @namespace    http://udaykrishna.com/
 // @version      0.1
 // @description  LeetCode Auto Show Description
-// @author       Uday
+// @author       uday krishna
 // @match        https://leetcode.com/notes/
 // @grant        none
 // @license      MIT
 // @icon         https://www.google.com/s2/favicons?domain=leetcode.com
-// @copyright 2021, nickfever (https://openuserjs.org/users/nickfever)
+// @copyright 2021, uday krishna (https://openuserjs.org/users/nickfever)
 // ==/UserScript==
 
 
