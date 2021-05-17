@@ -3,7 +3,7 @@
 // @namespace    http://udaykrishna.com/
 // @version      0.1
 // @description  NetFlix Show Access Time in Local Time
-// @author       You
+// @author       uday krishna
 // @match        https://www.netflix.com/AccountAccess
 // @icon         https://www.google.com/s2/favicons?domain=netflix.com
 // @grant        none
