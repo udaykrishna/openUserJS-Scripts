@@ -14,13 +14,26 @@
 (function() {
     'use strict';
 
-    const maxWidth = "75%";
-    const margin = "0px auto 0px auto";
+     // Fix Headers and footers
+    const FULL_WIDTH = "100%";
+    const MARGIN_AUTO = "auto";
+    var header = document.getElementById("banner")
+    var footer = document.getElementById("page-footer");
+    [header, footer].forEach(elem=>{
+        elem.style.margin=MARGIN_AUTO;
+        elem.style.maxWidth=FULL_WIDTH;
+    });
+
+    // Fix Content
+    const BODY_WIDTH = "75%";
+    const BODY_MARGIN = "0px auto 0px auto";
+
     var body = document.getElementsByTagName("body")[0];
     var main = document.getElementsByTagName("main")[0];
-    main.style.margin = margin;
-    body.style.margin = margin;
-    body.style.maxWidth = maxWidth;
-    main.style.maxWidth = maxWidth;
+    [body, main].forEach(elem=>{
+        elem.style.margin = BODY_MARGIN;
+        elem.style.maxWidth = BODY_WIDTH;
+    });
+
 
 })();
