@@ -3,7 +3,7 @@
 // @namespace    http://udaykrishna.com/
 // @version      0.1
 // @description  make martinfowler look cleaner!
-// @author       You
+// @author       nickfever
 // @match        https://martinfowler.com/*
 // @icon         https://www.google.com/s2/favicons?domain=martinfowler.com
 // @grant        none
