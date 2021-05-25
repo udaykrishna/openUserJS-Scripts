@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  Fix Split Screen on GFG IDE
 // @author       uday krishna
-// @match        https://ide.geeksforgeeks.org/
+// @match        https://ide.geeksforgeeks.org/*
 // @icon         https://www.google.com/s2/favicons?domain=geeksforgeeks.org
 // @grant        none
 // @copyright 2021, uday krishna (https://openuserjs.org/users/nickfever)
