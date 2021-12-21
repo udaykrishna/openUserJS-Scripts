@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  make martinfowler look cleaner!
 // @author       uday krishna
-// @match        https://martinfowler.com/*
+// @include      /^https:\/\/(martinfowler|refactoring)\.com\/*/
 // @icon         https://www.google.com/s2/favicons?domain=martinfowler.com
 // @grant        none
 // @copyright 2021, uday krishna (https://openuserjs.org/users/nickfever)
