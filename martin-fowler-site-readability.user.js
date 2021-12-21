@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Martin Fowler site readability
 // @namespace    http://udaykrishna.com/
-// @version      0.1
+// @version      0.2
 // @description  make martinfowler look cleaner!
 // @author       uday krishna
 // @include      /^https:\/\/(martinfowler|refactoring)\.com\/*/
