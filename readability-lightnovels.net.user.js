@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         readability-lightnovels.net
 // @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  try to take over the world!
-// @author       You
+// @version      0.1.1
+// @description  center lightnovels.net text!
+// @author       uday krishna
 // @include      /^https:\/\/readlightnovels\.net\/[\w-_%]+\/.*/
-// @icon         https://www.google.com/s2/favicons?domain=readlightnovels.net
+// @icon         https://readlightnovels.net/favicon.ico
 // @grant        none
 // ==/UserScript==
 
