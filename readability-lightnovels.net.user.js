@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         readability-lightnovels.net
-// @namespace    http://tampermonkey.net/
-// @version      0.1.1
+// @namespace    http://udaykrishna.com
+// @version      0.2
 // @description  center lightnovels.net text!
 // @author       uday krishna
 // @include      /^https:\/\/readlightnovels\.net\/[\w-_%]+\/.*/
