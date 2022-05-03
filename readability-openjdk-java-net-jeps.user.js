@@ -7,6 +7,7 @@
 // @match        https://openjdk.java.net/jeps/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=java.net
 // @grant        none
+// @license MIT
 // ==/UserScript==
 
 (function() {
