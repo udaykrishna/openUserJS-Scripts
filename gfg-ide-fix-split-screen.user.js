@@ -37,12 +37,12 @@
     });
     $("#splitScreen").unbind('click');
     $("#splitScreen").click(function (event) {
-        console.log("yooo");
-        console.log($(window).width());
+        #console.log("yooo");
+        #console.log($(window).width());
         if ($(window).width() > 768) {
             console.log("yooo1");
             if ($("#splitScreen span").hasClass('glyphicon-resize-full')) {
-                console.log("yooo2, "+$("#splitScreen span").hasClass('glyphicon-resize-full'));
+                #console.log("yooo2, "+$("#splitScreen span").hasClass('glyphicon-resize-full'));
                 $(".leftDiv").append($(".mainleftDiv"));
                 $(".rightDiv").append($('.mainRightDiv'));
                 $(".screen").hide();
@@ -54,7 +54,7 @@
                 $(".fullScreen").css("margin-top","100px");
                 $(".editorBlock")[0].style.height = "40vw";
             } else if ($("#splitScreen span").hasClass('glyphicon-resize-small')) {
-                console.log("yooo3, "+$("#splitScreen span").hasClass('glyphicon-resize-small'));
+                #console.log("yooo3, "+$("#splitScreen span").hasClass('glyphicon-resize-small'));
                 $(".normalScreen").append($(".mainleftDiv"));
                 $(".normalScreen").append($(".mainRightDiv"));
                 $(".leftDiv").empty();
