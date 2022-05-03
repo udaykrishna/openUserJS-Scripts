@@ -2,7 +2,7 @@
 // @name         fix jeps styling
 // @namespace    https://udaykrishna.com/
 // @version      0.1
-// @description  try to take over the world!
+// @description  make jeps page look cleaner!
 // @author       uday krishna (nickfever)
 // @match        https://openjdk.java.net/jeps/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=java.net
