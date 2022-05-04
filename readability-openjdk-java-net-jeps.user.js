@@ -1,13 +1,12 @@
 // ==UserScript==
 // @name         fix jeps styling
 // @namespace    https://udaykrishna.com/
-// @version      0.1
-// @description  make jeps page look cleaner!
-// @author       uday krishna (nickfever)
+// @version      0.2
+// @description  try to take over the world!
+// @author       You
 // @match        https://openjdk.java.net/jeps/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=java.net
 // @grant        none
-// @license MIT
 // ==/UserScript==
 
 (function() {
@@ -19,9 +18,9 @@
     body.style.width="100%";
 
     var mainId = document.getElementById("main");
-    mainId.style.marginLeft="20%";
+    mainId.style.margin="0px 15% 0px 5%";
     mainId.style.textAlign="justify";
-    mainId.style.position="absolute";
+    //mainId.style.position="absolute";
     mainId.style.width="60%";
     mainId.style.fontSize="12pt";
 
