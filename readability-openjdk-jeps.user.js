@@ -1,10 +1,11 @@
 // ==UserScript==
-// @name         fix jeps styling
+// @name         clean jeps styling
 // @namespace    https://udaykrishna.com/
-// @version      0.2.1
-// @description  try to take over the world!
+// @version      0.2.2
+// @description  fix jeps styling
 // @author       You
 // @match        https://openjdk.java.net/jeps/*
+// @match        https://openjdk.org/jeps/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=java.net
 // @grant        none
 // @license      MIT
