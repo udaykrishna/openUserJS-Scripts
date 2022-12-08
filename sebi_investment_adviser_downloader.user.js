@@ -7,6 +7,7 @@
 // @match        https://www.sebi.gov.in/sebiweb/other/OtherAction.do?doRecognisedFpi=yes&intmId=13
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=gov.in
 // @grant        none
+// @license      MIT
 // ==/UserScript==
 
 function parseFieldsInPage(fields){
