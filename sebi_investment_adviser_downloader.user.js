@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SEBI Investment Adviser downloader
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  easy interface to download sebi investor adviser
 // @author       Nickfever
 // @match        https://www.sebi.gov.in/sebiweb/other/OtherAction.do?doRecognisedFpi=yes&intmId=13
@@ -125,7 +125,7 @@ function attachDownloader(){
     document.getElementById("downloader_widget_button_nf").addEventListener("click", downloadCSV, false);
     let loading = document.createElement("div");
     loading.id="downloader_widget_loading_nf";
-    loading.innerHTML=`<div><img src="https://www.sebi.gov.in/images/slider/loading.gif" align="absmiddle">Please wait. downolading...</div>`;
+    loading.innerHTML=`<div><img src="https://www.sebi.gov.in/images/slider/loading.gif" align="absmiddle"> Please wait. Downloading...</div>`;
     loading.style.background="#f5f3f3";
     loading.style.zIndex=3;
     loading.style.display="None";
