@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         SEBI downloader
 // @namespace    http://tampermonkey.net/
-// @version      0.3
-// @description  easy interface to download sebi investor adviser
+// @version      0.4
+// @description  easy interface to download stuff from sebi
 // @author       Nickfever
 // @match        https://www.sebi.gov.in/sebiweb/other/OtherAction.do?doRecognisedFpiFilter=yes
 // @match        https://www.sebi.gov.in/sebiweb/other/OtherAction.do?doRecognisedFpi=yes&intmId=*
@@ -51,8 +51,8 @@ async function waitForLoading(ms, maxintervals, decrement){
 }
 
 async function getAllData(){
-    searchAllIntm();
-    //searchFormFpiAlp('A1')
+    //searchAllIntm();
+    searchFormFpiAlp('A1')
     await waitForLoading(500, 1, 0);
     let allDocs = [];
     let keys = new Set();
@@ -77,14 +77,16 @@ function quote(text, padChar){
 function getCSVLine(data, refArr){
     let line=[];
     for(let col of refArr){
-        line.push(quote(data[col], "\""));
+        let val = data[col];
+        val=val===undefined?"":val;
+        line.push(quote(val, "\""));
     }
     return line.join(",")+"\n";
 }
 
 async function extractCSV(){
     let res = await getAllData();
-    console.log(res)
+    //console.log(res)
     let refArr = Array.from(res.keys);
     let csvFmt=refArr.map((x)=>quote(x,"\"")).join(",")+"\n";
     for(let entry of res.data){
