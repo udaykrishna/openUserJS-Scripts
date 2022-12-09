@@ -1,10 +1,11 @@
 // ==UserScript==
-// @name         SEBI Investment Adviser downloader
+// @name         SEBI downloader
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
 // @description  easy interface to download sebi investor adviser
 // @author       Nickfever
-// @match        https://www.sebi.gov.in/sebiweb/other/OtherAction.do?doRecognisedFpi=yes&intmId=13
+// @match        https://www.sebi.gov.in/sebiweb/other/OtherAction.do?doRecognisedFpiFilter=yes
+// @match        https://www.sebi.gov.in/sebiweb/other/OtherAction.do?doRecognisedFpi=yes&intmId=*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=gov.in
 // @grant        none
 // @license      MIT
@@ -42,12 +43,17 @@ function sleep(ms){
     return new Promise(r=>setTimeout(r, ms));
 }
 
-
+async function waitForLoading(ms, maxintervals, decrement){
+    while(maxintervals>0 && document.getElementById("ajax_cat").innerText=="Please wait. Loading..."){
+        await sleep(ms);
+        maxintervals -= decrement;
+    }
+}
 
 async function getAllData(){
     searchAllIntm();
     //searchFormFpiAlp('A1')
-    await sleep(2000);
+    await waitForLoading(500, 1, 0);
     let allDocs = [];
     let keys = new Set();
     while(true){
@@ -57,7 +63,7 @@ async function getAllData(){
         searchFormFpi('n','-1');
         allDocs.push(...res.list);
         keys = union(keys, res.keys);
-        await sleep(2000);
+        await waitForLoading(500, 1, 0);
     }
     return {keys:keys, data:allDocs};
 }
@@ -113,27 +119,17 @@ function attachDownloader(){
     downloader.innerHTML = `
   <div style="margin:15px;color:#f5f3f3">  .  </div>
   <div style="margin:15px;color:#f5f3f3">  .  </div>
-  <div style="background-color:#f5f3f3; width:100%" class="two-column two-column-intermediaries sm-two-column bottom_space2 search-inter small-two-column">
+  <div style="background-color:#f5f3f3; width:100%;" class="two-column two-column-intermediaries sm-two-column bottom_space2 search-inter small-two-column">
   <span class="lable_text"><input class="form_control" type="text" value="" id="downloader_widget_filename_input_nf" placeholder="filename for download eg: investment_adviser.csv"></span>
   <div class="go_area go-area" style="text-align:center;" id="downloader_widget_button_nf"><a class="go-search go_search" href="#">Download All Records</a></div>
   </div>
   `;
-
-
-
     section.appendChild(downloader);
     document.getElementById("downloader_widget_button_nf").addEventListener("click", downloadCSV, false);
     let loading = document.createElement("div");
     loading.id="downloader_widget_loading_nf";
-    loading.innerHTML=`<div><img src="https://www.sebi.gov.in/images/slider/loading.gif" align="absmiddle"> Please wait. Downloading...</div>`;
-    loading.style.background="#f5f3f3";
-    loading.style.zIndex=3;
-    loading.style.display="None";
-    loading.style.top="50%";
-    loading.style.width="50%";
-    loading.style.margin="auto";
-    loading.style.position="fixed";
-    loading.style.paddingRight= "15px";
+    loading.innerHTML=`<div><img src="https://www.sebi.gov.in/images/slider/loading.gif" align="absmiddle"><span style="padding: 0 0 0 15px;">Please wait. downloading...</span></div>`;
+    loading.style = "border-style:outset;border-color:black;background:#f5f3f3;z-index:3;display:None;top:50%;width:50%;margin:auto;position:fixed;paddingRight:15px;border-width:5px"
     section.appendChild(loading);
 }
 
