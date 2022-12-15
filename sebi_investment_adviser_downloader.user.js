@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SEBI downloader
-// @namespace    http://tampermonkey.net/
-// @version      0.4
+// @namespace    http://udaykrishna.com
+// @version      0.5
 // @description  easy interface to download stuff from sebi
 // @author       Nickfever
 // @match        https://www.sebi.gov.in/sebiweb/other/OtherAction.do?doRecognisedFpiFilter=yes
