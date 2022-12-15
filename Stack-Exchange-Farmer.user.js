@@ -1,11 +1,13 @@
 // ==UserScript==
 // @name         Stack-Exchange-Farmer
 // @namespace    https://udaykrishna.com/
-// @version      0.1
+// @version      0.2
 // @description  Farm with ease
-// @author       You
+// @author       NickFever
 // @match        https://stackoverflow.com/
 // @match        https://*.stackexchange.com/
+// @match        https://stackoverflow.com/?tab=*
+// @match        https://*.stackexchange.com/?tab=*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=stackexchange.com
 // @grant        none
 // @license      MIT
@@ -95,18 +97,18 @@ function isFarmable(node){
     if(stats.length<3) return false;
 
     let ansCount = stats[1].getElementsByClassName("s-post-summary--stats-item-number");
-    if(ansCount.length==0||Number(ansCount[0].innerText)>0) return false;
+    if(ansCount.length==0||Number(ansCount[0].innerText.replaceAll(",", ""))>0) return false;
 
     let repList = node.getElementsByClassName("s-user-card--rep");
     if(repList.length==0) return false;
     let repScoreStr = repList[0].innerText;
     let repScore=0;
     if(repScoreStr.charAt(repScoreStr.length-1).toLowerCase()=='k'){
-        repScore = Number(repScoreStr.substr(0, repScoreStr.length-1))*1000;
+        repScore = Number(repScoreStr.substr(0, repScoreStr.length-1).replaceAll(",", ""))*1000;
     } else if (repScoreStr.charAt(repScoreStr.length-1).toLowerCase()=='m'){
-        repScore = Number(repScoreStr.substr(0, repScoreStr.length-1))*1000000;
+        repScore = Number(repScoreStr.substr(0, repScoreStr.length-1).replaceAll(",", ""))*1000000;
     } else {
-        repScore = Number(repScoreStr.substr(0, repScoreStr.length));
+        repScore = Number(repScoreStr.replaceAll(",", ""));
     }
     return repScore>=15;
 }
